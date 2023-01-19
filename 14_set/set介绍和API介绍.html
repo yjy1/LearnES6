@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>set介绍和API介绍  </title>
+</head>
+
+<body>
+    <script>
+        //   声明一个 set
+        /*  var Set: SetConstructor
+            new <any>(iterable?: Iterable<any>) => Set<any> (+1 overload) 
+        */
+        let s = new Set(['a','b','c'])
+        s.add('d')
+        s.delete('b')
+        s.size 
+        // s.clear()
+        console.log(s,s.size ,s.has('a'),typeof s);
+
+        // for(v of s){
+        //     console.log(v);
+        // }
+
+        // let s2 = new Set({name:'ycj',age:26}) /* 报错 */
+        // console.log(s2); 
+    </script>
+</body>
+
+</html>
