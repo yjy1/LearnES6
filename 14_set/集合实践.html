@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>集合实践 </title>
+</head>
+
+<body>
+    <script>
+        let arr = [1, 2, 3, 4, 5, 4, 3, 2, 1]
+        // //1.数组去重
+        // let result = [...new Set(arr)]
+        // console.log(result);
+        // //2.交集
+        // let arr2 = [1,2,4]
+        /* 
+            filter(predicate: (value: number, index: number, array: number[]) => value is number, thisArg?: any): number[] 
+        */
+        let arr3 = new Set([1, 2, 3, 7, 8, 9])
+        //    let result2= [...new Set(arr) ].filter((item)=>{
+        //         return arr3.has(item)
+        //     })
+        //     console.log(result2);
+        //3.并集
+        // let union = [...new Set([...arr, ...arr3])]
+        // console.log(union);
+        //4.差集
+        let diff = [...new Set(arr)].filter( item =>  !arr3.has(item) )
+        console.log(diff);
+    </script>
+</body>
+
+</html>
