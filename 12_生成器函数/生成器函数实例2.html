@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生成器函数实例2 </title>
+</head>
+
+<body>
+    <script>
+        // 模拟获取 用户数据 订单数据 商品数据
+        function getUser() {
+            setTimeout(() => {
+                let data = '用户数据'
+                iterator.next(`获取到 @@${data}：杨程杰`)
+            }, 1000);
+        }
+        function getOrders() {
+            setTimeout(() => {
+                let data = '订单数据'
+                iterator.next(`获取到 @@${data}：购买华为手机`)
+            }, 1000);
+        }
+        function getGoods() {
+            setTimeout(() => {
+                let data = '商品数据'
+                iterator.next(`获取到 @@${data}:华为mate50pro`)
+            }, 1000);
+        }
+        function * gen(){
+            console.log('gen start...');
+           console.log( yield getUser());
+           console.log( yield getOrders());
+           console.log( yield getGoods());
+        }
+        // 调用生成器函数
+        let iterator = gen()
+        iterator.next()
+    </script>
+</body>
+
+</html>
