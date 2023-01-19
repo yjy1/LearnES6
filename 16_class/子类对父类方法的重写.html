@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>子类对父类方法的重写  </title>
+</head>
+
+<body>
+    <script>
+      class Phone{
+        constructor(brand,price){
+            this.brand = brand
+            this.price = price
+        }
+        call(){
+            console.log('i am Phone');
+        }
+      }
+      class SmartPhone extends Phone{
+        /* 
+            ReferenceError: Must call super constructor in derived class before accessing 'this' or returning from derived constructor
+        */
+        constructor(brand,price,color,size){
+            super(brand,price) /*注意：必须调用 父类的构造器 */
+            this.color = color
+            this.size = size
+        }
+        photo (){
+            console.log('photo...');
+        }
+        playGame(){
+            console.log('playing...');
+        }
+        call(){
+            console.log('video calling...');
+        }
+      }
+      const s  = new SmartPhone('xiaomi','4999','white','6.1inch')
+      console.log(s);
+      s.call()
+    </script>
+</body>
+
+</html>
