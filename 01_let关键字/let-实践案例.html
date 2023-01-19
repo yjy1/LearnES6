@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>let-实践案例</title>
+    <style>
+        .item{
+            width: 100px;
+            height: 100px;
+            float: left;
+            margin: 10px;
+            border: 1px solid skyblue;
+        }
+        .itemClicked {
+            background-color: crimson;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2 class="page-header">点击切换颜色</h2>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+    <script>
+        // 获取元素
+        let items = document.getElementsByClassName('item')
+
+        /*  遍历元素，绑定事件 var定义i */
+        // for (var i = 0; i < items.length; i++) {
+        //     items[i].addEventListener('click', function(){
+        //         console.log('已点击',items[i]);
+        //         // this.style.background = 'crimson'
+        //         items[i].style.background = 'crimson' //function 没有自己的this，会往外层找i，找到外层的i=3，item[3]是不存在的，所以报错
+        //     })
+        // }
+        // {
+        //     var i = 0
+        // }
+        // {
+        //     var i = 1
+        // }
+        // {
+        //     var i = 2
+        // }
+        // console.log(window.i); //执行最后一次i++时，i=3，去for循环判断
+
+        /* 遍历元素，绑定事件 let定义i */
+        for (let i = 0; i < items.length; i++) {
+            items[i].addEventListener('click', function(){
+                console.log('已点击',items[i]);
+                // this.style.background = 'crimson'
+                items[i].style.background = 'crimson' //发现function 没有i ，会往外层找i，找到外层的i=3，item[3]是不存在的，所以报错
+            })
+        }
+        {
+            let i = 0 /* 注意：此处的只在块级作用域里有效 */
+            items[i].addEventListener('click', function(){
+                items[i].style.background = 'crimson' //发现function 没有i ，会往外层找i，找到外层的i=0
+            })
+        }
+        {
+            let i = 1
+            items[i].addEventListener('click', function(){
+                items[i].style.background = 'crimson' //发现function 没有i ，会往外层找i，找到外层的i=1
+            })
+        }
+        {
+            let i = 2
+            items[i].addEventListener('click', function(){
+                items[i].style.background = 'crimson' //发现function 没有i ，会往外层找i，找到外层的i=2
+            })
+        }
+        
+        
+    </script>
+</body>
+
+</html>
