@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class的静态成员  </title>
+</head>
+
+<body>
+    <script>
+        //  function Phone(){
+
+        //  }
+        //  Phone.name = '华为'
+        //  Phone.price = 5999
+        //  Phone.call = function(){
+        //     console.log('我可以打电话');
+        //  }
+        //  Phone.prototype.weight = '170g'
+        //  const p = new Phone()
+        //  console.log(p);
+        //  console.log(p.name);
+        //  console.log(p.weight);
+        //  console.log(Phone.name );
+        //  console.log(Phone.price );
+        //  console.log(Phone.call() );
+        //  console.log(p.call());
+
+        // 
+        class Phone{
+            /* 注意：静态属性，属于类，不属于实例对象 */
+           static name = '华为'
+           static price = '5999'
+           static call =()=>{
+            console.log('我可以打电话');
+           }
+        }
+        const p = new Phone()
+        console.log(p);
+        console.log(p.name);
+        console.log(Phone.name);
+        console.log(Phone.price);
+
+    </script>
+</body>
+
+</html>
