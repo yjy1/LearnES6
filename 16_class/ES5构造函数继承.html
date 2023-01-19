@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES5构造函数继承  </title>
+</head>
+
+<body>
+    <script>
+        //  手机
+        function Phone(brand,price){
+            this.brand = brand
+            this.price = price
+        }
+        Phone.prototype.call = ()=>{
+            console.log('call ...');
+        }
+        function SmartPhone(brand,price,color,size){
+            // call(thisArg: any, ...argArray: any[]): any
+            Phone.call(this,brand,price)
+            this.color = color
+            this.size = size
+        }
+        //设置子级构造函数的原型
+        SmartPhone.prototype = new Phone
+        SmartPhone.prototype.photo = ()=>{
+            console.log('photo...');
+        }
+        SmartPhone.prototype.game = ()=>{
+            console.log('play...');
+        }
+        const smartPhone = new SmartPhone('huawei','5999','green','6.1inch')
+        console.log(smartPhone);
+    </script>
+</body>
+
+</html>
