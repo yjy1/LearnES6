@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象添加Symbol类型的属性</title>
+</head>
+
+<body>
+    <script>
+        const game = {
+            name:'俄罗斯方块',
+            up:()=>{
+                console.log('俄罗斯方块向上');
+            },
+            down:()=>{
+                console.log('俄罗斯方块向下');
+            }
+        }
+        // 声明一个对象
+        //  let methods = {
+        //     up:Symbol(),
+        //     down:Symbol()
+        //  }
+        //  game[methods.up] = function(){
+        //     console.log('向上');
+        //  }
+        //  game[methods.down] = function(){
+        //     console.log('向下');
+        //  }
+        //  console.log(game);
+
+        // 
+        let youxi = {
+            name:'狼人杀',
+            [Symbol('start')]:()=>{
+                console.log('start');
+            },
+            [Symbol('say')]:()=>{
+                console.log('我可以发言');
+            }
+        }
+        console.log(youxi);
+    </script>
+</body>
+
+</html>
