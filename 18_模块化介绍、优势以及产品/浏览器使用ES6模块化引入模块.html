@@ -8,12 +8,22 @@
 </head>
 <body>
     <script type="module">
+        // 分别暴露
         // import m,{school} from './js/m.js'
         // console.log(m);
         // console.log(school);
-        import * as m from './js/m.js'
-        console.log(m.school);
-        console.log( m.teach());
+        
+        // import * as m from './js/m.js'
+        // console.log(m.school);
+        // console.log( m.teach());
+
+        // 统一暴露
+        // import * as m2 from './js/m2.js'
+        // console.log(m2);
+
+         // 默认暴露
+         import m3 from './js/m3.js'
+        console.log(m3);
     </script>
 </body>
 </html>
