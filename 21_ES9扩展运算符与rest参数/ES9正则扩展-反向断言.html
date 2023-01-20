@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES9正则扩展-反向断言 </title>
+</head>
+
+<body>
+    <script>
+        let str = 'JS521你知道吗31215啦啦啦'
+        // 正向断言
+        // const reg = /\d+(?=啦)/
+        // let result = reg.exec(str)
+        // 反向断言
+        const reg = /(?<=吗)\d+/
+        let result = reg.exec(str)
+        console.log(result);
+    </script>
+</body>
+
+</html>
