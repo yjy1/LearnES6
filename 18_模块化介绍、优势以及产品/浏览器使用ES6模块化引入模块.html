@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>浏览器使用ES6模块化引入模块</title>
 </head>
+
 <body>
     <script type="module">
+        /* 1.通用的导入方式 */
         // 分别暴露
         // import m,{school} from './js/m.js'
         // console.log(m);
         // console.log(school);
-        
+
         // import * as m from './js/m.js'
         // console.log(m.school);
         // console.log( m.teach());
@@ -21,9 +24,26 @@
         // import * as m2 from './js/m2.js'
         // console.log(m2);
 
-         // 默认暴露
-         import m3 from './js/m3.js'
-        console.log(m3);
+        // 默认暴露
+        // import m3 from './js/m3.js'
+        // console.log(m3);
+
+
+        /* 2.解构赋值形式 */
+        // import {school,teach} from './js/m.js'
+        //  import {school as ss,teach} from './js/m2.js'
+        //  import {default as m3} from './js/m3.js'
+        //  import m33 from './js/m3.js'
+ 
+        // console.log(ss);
+        // console.log(teach);
+        // console.log(m3);
+        // console.log(m33);
+        
+        /* 3.简便形式 针对默认暴露 */
+        import m33 from './js/m3.js'
+        console.log(m33);
     </script>
 </body>
+
 </html>
