@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getter和setter设置  </title>
+</head>
+
+<body>
+    <script>
+    //   get set
+    class Phone{
+        get price(){
+            console.log('价格属性被获取了');
+            return 'iloveyou'
+        }
+        // A 'set' accessor must have exactly one parameter
+        set price( number){
+            console.log('价格属性被修改了,为：',number);
+        }
+    }
+    // 实例化对象
+    let s = new Phone()
+    
+    console.log(s.price);
+    s.price = 1999
+    </script>
+</body>
+
+</html>
