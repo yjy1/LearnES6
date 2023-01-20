@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES8对象方法扩展 </title>
+</head>
+
+<body>
+    <script>
+         let obj = {
+            name:'yangchengjie',
+            city:['北京','上海','广州'],
+            skills:['vue','react','es6']
+         }
+        //  获取对象的所以key
+         console.log(Object.keys(obj));
+        //  获取对象的所有值
+        /* 
+            (method) ObjectConstructor.values<any>(o: {
+            [s: string]: any;
+            } | ArrayLike<any>): any[] (+1 overload)
+        */
+         console.log(Object.values(obj));
+        //  entries
+        /* 
+            entries(o: ArrayLike<string | string[]> | { [s: string]: string | string[]; }): [string, string | string[]][]
+
+            Object that contains the properties and methods. This can be an object that you created or an existing Document Object Model (DOM) object.
+        */
+        console.log(Object.entries(obj));
+        // 创建map
+        const m = new Map(Object.entries(obj))
+        console.log(m.get('name'));
+        console.log(m.get('city'));
+        // 
+        console.log(Object.getOwnPropertyDescriptors(obj));
+
+        /* 
+            create(o: object, properties: PropertyDescriptorMap & ThisType<any>): any
+            JavaScript object that contains one or more property descriptors.
+        */
+       let obj2 =  Object.create(null,{
+            name: {
+                value:'ycj',
+                writable:true,
+                configurable:true,
+                enumerable:true
+            }
+        })
+        console.log( getOwnPropertyDescriptors(obj2));
+    </script>
+</body>
+
+</html>
