@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES10对象扩展方法Object.fromEntries </title>
+</head>
+
+<body>
+    <script>
+        //二维数组
+        /* 
+            (method) ObjectConstructor.fromEntries(entries: Iterable<readonly any[]>): any (+1 overload)
+        */
+        // const result = Object.fromEntries([
+        //     ['name', '尚硅谷'],
+        //     ['xueke', 'Java', '大数据', '前端', '云计算']
+        // ])
+        // map
+        // const m = new Map()
+        // m.set('name','yangchengjie')
+        // let result = Object.fromEntries(m)
+
+        // ES8
+        const arr= Object.entries({
+            name:'yang'
+        })
+        console.log(arr);
+    </script>
+</body>
+
+</html>
