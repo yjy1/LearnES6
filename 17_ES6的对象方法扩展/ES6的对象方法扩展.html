@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6的对象方法扩展 </title>
+</head>
+
+<body>
+    <script>
+        //1.Object.is 判断两个值是否完全相等
+        // console.log(Object.is(120,121));
+        // console.log(Object.is(120,120));
+        // console.log(Object.is(NaN,NaN));
+        // console.log( NaN === NaN );
+
+        //2.Object.assn 对象的合并
+    //     const obj1 = {
+    //         name:'yangchengjie'
+    //     }
+    //     const obj2 = {
+    //         age:26
+    //     }
+    //     // (method) ObjectConstructor.assign<{}, any>(target: {}, source: any): any (+3 overloads)
+    //    console.log(Object.assign(obj1,obj2)); 
+        //3. Object.setPrototypeof Object.getPrototypeof
+        const obj1 = {
+            name:'yangchengjie'
+        }
+        const obj2 = {
+            age:26
+        }
+        /* 
+            setPrototypeOf(o: any, proto: object): any
+            The object to change its prototype.
+        */
+        Object.setPrototypeOf(obj1,obj2)
+        console.log(obj1);
+        console.log(obj1.age);
+        /* 
+            getPrototypeOf(o: any): any
+            The object that references the prototype.       
+        */
+       console.log('***',Object.getPrototypeOf(obj1)); 
+    </script>
+</body>
+
+</html>
