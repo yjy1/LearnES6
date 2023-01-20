@@ -9,6 +9,13 @@ console.log(m1);
 console.log(m2);
 console.log(m3);
 
-m1.teach()
-m2.findJob()
-m3.default.change()
+// m1.teach()
+// m2.findJob()
+// m3.default.change()
+
+// 修改背景颜色
+import $ from 'jquery'
+/* 
+    (method) JQuery<HTMLElement>.css(propertyName: string): string (+3 overloads)
+ */
+$('body').css('background','skyblue')
