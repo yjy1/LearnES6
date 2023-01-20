@@ -8,3 +8,7 @@ import * as m3 from './m3.js'
 console.log(m1);
 console.log(m2);
 console.log(m3);
+
+m1.teach()
+m2.findJob()
+m3.default.change()
